@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.58.1" />
+
+    
+    
+    
+
+<title>Docker 101 • Home</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker 101"/>
+<meta name="twitter:description" content="WHAT IS DOCKER ? To put it simply, Docker is a way of packing &amp; distributing software.
+WHY DO WE NEED DOCKER ?  Let&rsquo;s say your are building a Python application using Django. You can provide list of Python dependencies/packages needed for the project inside requirements.txt file. Let&rsquo;s say one of the dependency is celery. For celery to work it will need a backend ( let&rsquo;s say we are using rabbitmq as backend for celery) For the project to work on a system you will have to install rabbitmq separately."/>
+
+<meta property="og:title" content="Docker 101" />
+<meta property="og:description" content="WHAT IS DOCKER ? To put it simply, Docker is a way of packing &amp; distributing software.
+WHY DO WE NEED DOCKER ?  Let&rsquo;s say your are building a Python application using Django. You can provide list of Python dependencies/packages needed for the project inside requirements.txt file. Let&rsquo;s say one of the dependency is celery. For celery to work it will need a backend ( let&rsquo;s say we are using rabbitmq as backend for celery) For the project to work on a system you will have to install rabbitmq separately." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engbytes.dev/posts/docker/" />
+<meta property="article:published_time" content="2018-01-28T12:04:13+05:30" />
+<meta property="article:modified_time" content="2018-01-28T12:04:13+05:30" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.f3ec2f30514f5169c68b1bf9e5a5ab48f4d2e724f1b16cde04a6b4bee85e16cb.css" integrity="sha256-8&#43;wvMFFPUWnGixv55aWrSPTS5yTxsWzeBKa0vuheFss=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://engbytes.dev/">Home</a>
+      </span>
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Home</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/eng_bytes" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    <div class="copyright">
+  <p></p>
+  &copy; 2020 .
+  <a href="https://creativecommons.org/licenses/by-sa/4.0">All Rights Reserved</a>.
+  <p></p>Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+  
+</div>
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Docker 101</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jan 28, 2018
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<h4 id="what-is-docker">WHAT IS DOCKER ?</h4>
+
+<p>To put it simply, Docker is a way of packing &amp; distributing software.</p>
+
+<h4 id="why-do-we-need-docker">WHY DO WE NEED DOCKER ?</h4>
+
+<ul>
+<li>Let&rsquo;s say your are building a Python application using Django. You can provide list of Python dependencies/packages needed for the project inside requirements.txt file.</li>
+<li>Let&rsquo;s say one of the dependency is celery. For celery to work it will need a backend ( let&rsquo;s say we are using rabbitmq as backend for celery)</li>
+<li>For the project to work on a system you will have to install rabbitmq separately.</li>
+
+<li><p>Now Imagine your colleague wants to set up this project locally on his/her laptop. They will have to</p>
+
+<ul>
+<li>Step 1 : Download the code from repo.</li>
+<li>Step 2 : Install dependencies using requirements.txt.</li>
+<li>Step 3 : Install rabbitmq on the system manually.
+<br /></li>
+</ul>
+
+<p><strong>Step 3</strong> is where the problem starts. For e.g.</p>
+
+<ol>
+<li>You might have instructions for installing rabbitmq on linux but your friend is using mac.</li>
+<li>Let&rsquo;s say if they ended up installing latest version but your app requires specific version of rabbitmq (latest version is not supported).
+
+<br /></li>
+</ol></li>
+</ul>
+
+<p>There are many more reasons but let&rsquo;s say for now it&rsquo;s clear that we might need a better way to handle these problems.</p>
+
+<pre><code class="language-SO">
+Sure, we will surely discuss that but before we jump to that, let's understand a bit more about how Docker works.
+
+#### HOW DOCKER WORKS ?
+
+__Docker consists of three main parts__
+
+---
+1. Dockerfile
+
+    A Dockerfile is a file that you create which produces a Docker image when you build it.
+    
+2. Docker Image
+    
+    An image is a read-only template with instructions for creating a Docker container. You can find pre-built images for
+    commonly used softwares on dockerhub
+    for e.g : [https://hub.docker.com/_/rabbitmq] (https://hub.docker.com/_/rabbitmq)
+    
+    Also you can build Docker images from Docker file using command below
+    
+    ```docker build -f &lt;docker_file_path&gt; -t &lt;name:tag&gt;```
+
+
+3. Docker Container
+
+    A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. 
+
+    For e.g. You can start a container is command below
+    
+    ``` docker run -d &lt;dockerimage_name&gt; ```
+
+---
+
+
+ 
+#### So what if we have more than one docker containers?
+
+##### docker-compose
+
+Docker Compose is an official tool that helps you manage multiple Docker containers by letting you define everything through a docker-compose.yml file.
+
+
+___
+
+&gt; Coming back to the solution of our problem. How do we help our colleague install the project locally
+on his/her computer without any hassle using Docker?
+
+Well all you have to do is add the below file to your code repo.
+
+</code></pre>
+
+<p>docker-compose.yml```</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#e6db74">&#39;3.3&#39;</span>
+
+services:
+  my_rabbitmq:
+    image: rabbitmq:<span style="color:#ae81ff">3.7.8</span>-alpine
+
+    ports:
+      - <span style="color:#e6db74">&#34;6672:5672&#34;</span>
+      - <span style="color:#e6db74">&#34;16672:15672&#34;</span></code></pre></div>
+
+<p>Anyone who wants to test out the application can checkout the django repo and run</p>
+
+<ol>
+<li>pip install -r requirements.txt ( to install all necessary Python packages )</li>
+<li>docker-compose up ( to install all other dependencies, in our case rabbitmq )</li>
+</ol>
+
+<h3 id="miscellaneous">MISCELLANEOUS</h3>
+
+<p><strong>Some frequently used commands for docker containers</strong></p>
+
+<ol>
+<li><code>docker ps</code>
+
+* Shows all the docker containers running in the background
+
+2. <code>docker stop &lt;container_id&gt;</code>
+
+* stops the container ( alive but not running)
+
+3. <code>docker start &lt;container_id&gt;</code>
+
+* starts the container ( that was in stop state)
+
+4. <code>docker rm -f &lt;container_id/name&gt;</code>
+
+* force remove/kill/delete a container
+
+5. <code>docker ps -a</code>
+
+* shows all the docker containers that are in stopped stage or exited stage
+
+6. <code>docker stats &lt;container_id&gt;</code>
+
+* Shows resource utilisation by the container ( CPU, Memory etc )
+
+7. <code>docker logs &lt;container_id&gt;</code>
+
+* Fetch the logs of a container
+
+8. <code>docker exec -it &lt;container_id&gt; bash</code>
+
+* Run a command in a running container
+<br /></li>
+</ol>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+    <a href="/posts/hugo/" class="navigation-next">
+      <span class="navigation-tittle">Building static blog/website using Hugo</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
+  integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+  crossorigin="anonymous">
+</script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

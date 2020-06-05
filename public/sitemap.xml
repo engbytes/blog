@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://engbytes.dev/posts/hugo/</loc>
+    <lastmod>2018-12-06T16:23:57+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engbytes.dev/</loc>
+    <lastmod>2018-12-06T16:23:57+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engbytes.dev/posts/</loc>
+    <lastmod>2018-12-06T16:23:57+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engbytes.dev/posts/docker/</loc>
+    <lastmod>2018-01-28T12:04:13+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engbytes.dev/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://engbytes.dev/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://engbytes.dev/tags/</loc>
+  </url>
+  
+</urlset>

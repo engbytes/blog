@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Home</title>
+    <link>https://engbytes.dev/posts/</link>
+    <description>Recent content in Posts on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Dec 2018 16:23:57 +0530</lastBuildDate>
+    
+	<atom:link href="https://engbytes.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building static blog/website using Hugo</title>
+      <link>https://engbytes.dev/posts/hugo/</link>
+      <pubDate>Thu, 06 Dec 2018 16:23:57 +0530</pubDate>
+      
+      <guid>https://engbytes.dev/posts/hugo/</guid>
+      <description>Recently i have set-up this blog using Hugo. I was able to do it over a weekend. It was a fun &amp;amp; rewarding experience. If you are interested in setting up a static blog/website all you have to do is follow these 6 simple steps
+1) Select your theme
+ Hugo has a wide variety of themes to select from. Pick your favorite here
+ 2) Setting it up locally</description>
+    </item>
+    
+    <item>
+      <title>Docker 101</title>
+      <link>https://engbytes.dev/posts/docker/</link>
+      <pubDate>Sun, 28 Jan 2018 12:04:13 +0530</pubDate>
+      
+      <guid>https://engbytes.dev/posts/docker/</guid>
+      <description>WHAT IS DOCKER ? To put it simply, Docker is a way of packing &amp;amp; distributing software.
+WHY DO WE NEED DOCKER ?  Let&amp;rsquo;s say your are building a Python application using Django. You can provide list of Python dependencies/packages needed for the project inside requirements.txt file. Let&amp;rsquo;s say one of the dependency is celery. For celery to work it will need a backend ( let&amp;rsquo;s say we are using rabbitmq as backend for celery) For the project to work on a system you will have to install rabbitmq separately.</description>
+    </item>
+    
+  </channel>
+</rss>
