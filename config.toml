@@ -8,6 +8,8 @@ disqusShortname = ""
 googleAnalytics = ""
 staticDir = ["static/img"]
 
+[params]
+	themeColor = "theme-base-0d"
 [params.social]
 	twitter = "eng_bytes"
 [[menu.main]]
@@ -16,7 +18,12 @@ staticDir = ["static/img"]
     identifier = "posts"
     url = "/posts/"
 [[menu.main]]
+    name = "Books"
+    weight = 200
+    identifier = "books"
+    url = "/books/"
+[[menu.main]]
     name = "About"
     identifier = "about"
-    weight = 200
+    weight = 300
     url = "/about/"
