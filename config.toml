@@ -1,0 +1,22 @@
+baseURL = "https://engbytes.dev/"
+languageCode = "en-us"
+title = "Home"
+theme = "hyde-hyde"
+highlightjs = true
+highlightjsstyle="Idea"
+disqusShortname = ""
+googleAnalytics = ""
+staticDir = ["static/img"]
+
+[params.social]
+	twitter = "eng_bytes"
+[[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 200
+    url = "/about/"
