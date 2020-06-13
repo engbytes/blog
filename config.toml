@@ -9,7 +9,9 @@ googleAnalytics = ""
 staticDir = ["static/img"]
 
 [params]
-	themeColor = "theme-base-0d"
+	themeColor = "theme-base-0d"	
+	showBuiltWith = false
+    mainSections = ["posts"]
 [params.social]
 	twitter = "eng_bytes"
 [[menu.main]]
@@ -22,8 +24,9 @@ staticDir = ["static/img"]
     weight = 200
     identifier = "books"
     url = "/books/"
+
 [[menu.main]]
     name = "About"
     identifier = "about"
-    weight = 300
+    weight = 400
     url = "/about/"
