@@ -11,6 +11,7 @@ staticDir = ["static/img"]
 [params]
     themeColor = "theme-base-0d"
     showBuiltWith = false
+    mainSections = ["posts"]
 [params.social]
 	twitter = "eng_bytes"
 [[menu.main]]
