@@ -1,6 +1,6 @@
 ---
 title: "Building static blog/website using Hugo"
-date: 2018-12-06T16:23:57+05:30
+date: 2020-06-06T16:23:57+05:30
 draft: false
 ---
 
